@@ -43,4 +43,10 @@ describe('Cadastro Completo', () => {
         cy.contains('Account Created!').should('be.visible');
     });
 
+    it('Cadastro Completo de Novo Usuário Sem os Campos Obrigatórios', () => {
+        CadastroCompleto.enviarCadastroCompleto();
+
+        cy.url().should('equal', 'https://www.automationexercise.com/signup');
+    });
+
 });

@@ -13,4 +13,5 @@ export const ELEMENTS = {
     zipcodeInput: '[data-qa="zipcode"]',
     mobileNumberInput: '[data-qa="mobile_number"]',
     createAccountButton: '[data-qa="create-account"]',
+    continueButton: '[data-qa="continue-button"]'
 };

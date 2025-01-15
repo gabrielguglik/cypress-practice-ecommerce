@@ -51,6 +51,10 @@ class CadastroCompleto {
         cy.get(elements.createAccountButton).click();
     };
 
+    clicarBotaoContinuar() {
+        cy.get(elements.continueButton).click();
+    };
+
 };
 
 export default new CadastroCompleto();
