@@ -41,7 +41,7 @@ describe('Cadastro Inicial', () => {
             email: faker.internet.email(),
             password: faker.internet.password(),
             title: 'Mr',
-            birth_date: faker.number.int({ min: 1, max: 30 }),
+            birth_day: faker.number.int({ min: 1, max: 30 }),
             birth_month: faker.date.month(),
             birth_year: faker.number.int({ min: 1950, max: 2005 }),
             firstname: faker.person.firstName(),
@@ -62,7 +62,7 @@ describe('Cadastro Inicial', () => {
         CadastroInicial.enviarCadastroInicial();
 
         cy.url().should('equal', 'https://www.automationexercise.com/login');
-        cy.contains('Email Address already exist!', 'be.visible');
+        cy.contains('Email Address already exist!').should('be.visible');
     });
 
 });

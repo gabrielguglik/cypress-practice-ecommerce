@@ -3,14 +3,14 @@ const elements = require('./elements').ELEMENTS;
 class CadastroInicial {
     acessarCadastroInicial() {
         cy.visit('https://www.automationexercise.com/login');
-    }
-
-    preencherNome(user_name) {
-        cy.get(elements.nameInput).type(user_name);
     };
 
-    preencherEmail(user_email) {
-        cy.get(elements.emailInput).type(user_email);
+    preencherNome(name) {
+        cy.get(elements.nameInput).type(name);
+    };
+
+    preencherEmail(email) {
+        cy.get(elements.emailInput).type(email);
     };
 
     enviarCadastroInicial() {
