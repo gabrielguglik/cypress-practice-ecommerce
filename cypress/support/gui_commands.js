@@ -1,5 +1,7 @@
 import CadastroCompleto from "./pages/cadastroCompleto";
 import CadastroInicial from "./pages/cadastroInicial";
+import Home from "./pages/home";
+import Login from "./pages/login";
 
 Cypress.Commands.add('gui_fazer_cadastro_inicial', user_infos => {
     CadastroInicial.acessarCadastroInicial();
@@ -24,4 +26,17 @@ Cypress.Commands.add('gui_fazer_cadastro_completo', user_infos => {
     CadastroCompleto.preencherNumeroCelular(user_infos.mobile_number);
     CadastroCompleto.enviarCadastroCompleto();
     CadastroCompleto.clicarBotaoContinuar();
+});
+
+Cypress.Commands.add('adicionar_produto_ao_carrinho', () => {
+    Home.acessarHome();
+    Home.localizarProduto();
+    Home.clicarBotaoAddToCart();
+});
+
+Cypress.Commands.add('fazer_login', (email, password) => {
+    Login.acessarLogin();
+    Login.preencherEmail(email);
+    Login.preencherSenha(password);
+    Login.clicarBotaoLogin();
 });
