@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import Home from '../../support/pages/home';
 import Login from '../../support/pages/login';
 
 describe('Login', () => {
@@ -27,7 +28,7 @@ describe('Login', () => {
         // garantindo maior velocidade e eliminando visitas desncessárias às páginas. no entanto, devido a limitações da aplicação,
         // optou-se por realizar as pré-condições utilizando a interface gráfica (GUI).
         cy.gui_fazer_cadastro_completo(user_infos);
-        cy.get('a[href="/logout"]').click(); // TODO: importar comando da página de login
+        Home.clicarBotaoLogout();
     });
 
     it('Login de Usuário Existente com Sucesso', () => {
