@@ -1,5 +1,6 @@
 import CadastroCompleto from "./pages/cadastroCompleto";
 import CadastroInicial from "./pages/cadastroInicial";
+import ContactUs from "./pages/contactUs";
 import Home from "./pages/home";
 import Login from "./pages/login";
 
@@ -39,4 +40,14 @@ Cypress.Commands.add('fazer_login', (email, password) => {
     Login.preencherEmail(email);
     Login.preencherSenha(password);
     Login.clicarBotaoLogin();
+});
+
+Cypress.Commands.add('enviar_mensagem', (message_infos) => {
+    ContactUs.acessarContactUs();
+    ContactUs.preencherNome(message_infos.name);
+    ContactUs.preencherEmail(message_infos.email);
+    ContactUs.preencherAssunto(message_infos.subject);
+    ContactUs.preencherMensagem(message_infos.message);
+    ContactUs.escolherArquivo(message_infos.file);
+    ContactUs.enviarMensagem();
 });
