@@ -3,6 +3,7 @@ import CadastroInicial from "./pages/cadastroInicial";
 import ContactUs from "./pages/contactUs";
 import Home from "./pages/home";
 import Login from "./pages/login";
+import ProductDetails from "./pages/productDetails";
 
 Cypress.Commands.add('gui_fazer_cadastro_inicial', user_infos => {
     CadastroInicial.acessarCadastroInicial();
@@ -50,4 +51,9 @@ Cypress.Commands.add('enviar_mensagem', (message_infos) => {
     ContactUs.preencherMensagem(message_infos.message);
     ContactUs.escolherArquivo(message_infos.file);
     ContactUs.enviarMensagem();
+});
+
+Cypress.Commands.add('visualizacao_adicionar_produto_ao_carrinho', () => {
+    ProductDetails.acessarVisualizacaoProduto();
+    ProductDetails.clicarBotaoAddToCart();
 });
