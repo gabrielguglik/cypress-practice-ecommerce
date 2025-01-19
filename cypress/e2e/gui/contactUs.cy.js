@@ -11,7 +11,7 @@ describe('Contact Us', () => {
             file: 'contactUsFile.txt'
         };
 
-        cy.enviar_mensagem(message_infos);
+        cy.gui_enviar_mensagem(message_infos);
 
         cy.contains('Success! Your details have been submitted successfully.').should('be.visible');
     });
@@ -43,7 +43,7 @@ describe('Contact Us', () => {
             file: 'contactUsFile.txt'
         };
 
-        cy.enviar_mensagem(message_infos);
+        cy.gui_enviar_mensagem(message_infos);
         ContactUs.clicarBotaoHome();
 
         cy.url().should('equal', 'https://www.automationexercise.com/');

@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import Home from "../../support/pages/home";
+import Home from '../../support/pages/home';
 
 describe('Home', () => {
     it('Adicionar Produto ao Carrinho com Sucesso', () => {
@@ -55,14 +55,14 @@ describe('Home', () => {
     });
 
     it('Permanecer na Seção Home Após Adicionar um Produto ao Carrinho com Sucesso', () => {
-        cy.adicionar_produto_ao_carrinho();
+        cy.gui_adicionar_produto_ao_carrinho();
         Home.clicarBotaoContinueShopping();
 
         cy.url().should('equal', 'https://www.automationexercise.com/');
     });
 
     it('Redirecionar para Seção Cart Após Adicionar um Produto ao Carrinho com Sucesso', () => {
-        cy.adicionar_produto_ao_carrinho();
+        cy.gui_adicionar_produto_ao_carrinho();
         Home.clicarBotaoViewCart();
 
         cy.url().should('equal', 'https://www.automationexercise.com/view_cart');

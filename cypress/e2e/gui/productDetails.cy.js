@@ -61,21 +61,20 @@ describe('Product Details', () => {
     });
 
     it('Adicionar Produto ao Carrinho a Partir da Visualização com Sucesso', () => {
-        cy.visualizacao_adicionar_produto_ao_carrinho();
+        cy.gui_visualizacao_adicionar_produto_ao_carrinho();
 
         cy.contains('Your product has been added to cart.').should('be.visible');
     });
 
     it('Permanecer na Visualização Após Adicionar um Produto ao Carrinho com Sucesso', () => {
-        cy.visualizacao_adicionar_produto_ao_carrinho();
+        cy.gui_visualizacao_adicionar_produto_ao_carrinho();
         ProductDetails.clicarBotaoContinueShopping();
 
         cy.url().should('equal', 'https://www.automationexercise.com/product_details/1');
     });
 
     it('Redirecionar para Seção Cart Após Adicionar um Produto ao Carrinho a Partir da Visualização com Sucesso', () => {
-
-        cy.visualizacao_adicionar_produto_ao_carrinho();
+        cy.gui_visualizacao_adicionar_produto_ao_carrinho();
         ProductDetails.clicarBotaoViewCart();
 
         cy.url().should('equal', 'https://www.automationexercise.com/view_cart');

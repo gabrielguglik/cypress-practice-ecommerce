@@ -5,7 +5,6 @@ class Home {
         cy.visit('https://www.automationexercise.com/');
     };
 
-    
     localizarProduto() {
         return cy.get(elements.product1Id).first().trigger('mouseover');
     };
