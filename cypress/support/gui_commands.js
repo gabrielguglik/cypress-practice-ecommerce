@@ -1,5 +1,6 @@
 import CadastroCompleto from "./pages/cadastroCompleto";
 import CadastroInicial from "./pages/cadastroInicial";
+import Cart from "./pages/cart";
 import ContactUs from "./pages/contactUs";
 import Home from "./pages/home";
 import Login from "./pages/login";
@@ -30,20 +31,20 @@ Cypress.Commands.add('gui_fazer_cadastro_completo', user_infos => {
     CadastroCompleto.clicarBotaoContinuar();
 });
 
-Cypress.Commands.add('adicionar_produto_ao_carrinho', () => {
+Cypress.Commands.add('gui_adicionar_produto_ao_carrinho', () => {
     Home.acessarHome();
     Home.localizarProduto();
     Home.clicarBotaoAddToCart();
 });
 
-Cypress.Commands.add('fazer_login', (email, password) => {
+Cypress.Commands.add('gui_fazer_login', (email, password) => {
     Login.acessarLogin();
     Login.preencherEmail(email);
     Login.preencherSenha(password);
     Login.clicarBotaoLogin();
 });
 
-Cypress.Commands.add('enviar_mensagem', (message_infos) => {
+Cypress.Commands.add('gui_enviar_mensagem', (message_infos) => {
     ContactUs.acessarContactUs();
     ContactUs.preencherNome(message_infos.name);
     ContactUs.preencherEmail(message_infos.email);
@@ -53,7 +54,24 @@ Cypress.Commands.add('enviar_mensagem', (message_infos) => {
     ContactUs.enviarMensagem();
 });
 
-Cypress.Commands.add('visualizacao_adicionar_produto_ao_carrinho', () => {
+Cypress.Commands.add('gui_visualizacao_adicionar_produto_ao_carrinho', () => {
     ProductDetails.acessarVisualizacaoProduto();
     ProductDetails.clicarBotaoAddToCart();
+});
+
+Cypress.Commands.add('gui_adicionar_produto_e_visualizar_carrinho', () => {
+    Home.acessarHome();
+    Home.localizarProduto();
+    Home.clicarBotaoAddToCart();
+    Home.clicarBotaoViewCart();
+});
+
+Cypress.Commands.add('gui_finalizar_compra', (payment_infos) => {
+    Cart.clicarBotaoProceedToCheckout();
+    Cart.clicarBotaoPlaceOrder();
+    Cart.preencherNomeNoCartao(payment_infos.name_on_card);
+    Cart.preencherCardNumber(payment_infos.card_number);
+    Cart.preencherCVC(payment_infos.cvc);
+    Cart.preencherExpiration(payment_infos.expiry_month, payment_infos.expiry_year);
+    Cart.clicarBotaoPayAndConfirmOrder();
 });
