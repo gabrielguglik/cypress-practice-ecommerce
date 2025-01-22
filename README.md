@@ -81,14 +81,21 @@ Contribuições são bem-vindas! Para contribuir com este projeto, siga estas et
 
 ## 👥 Contribuidores
 
-<table> 
-  <tr> 
-    <td align="center"> 
-      <a href="https://github.com/gabrielguglik"> 
-        <img src="https://avatars.githubusercontent.com/u/your_github_id?v=4" width="100px;" alt="Gabriel Guglielmi Kirtschig"/> 
-        <br /> 
-        <sub><b>Gabriel Guglielmi Kirtschig</b></sub> 
-      </a> 
-    </td> 
-  </tr> 
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/gabrielguglik">
+        <img src="https://avatars.githubusercontent.com/u/107446286?v=4" width="100px;" alt="Gabriel Guglielmi Kirtschig"/>
+        <br />
+        <sub><b>Gabriel Guglielmi Kirtschig</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/colaborador-placeholder">
+        <img src="https://avatars.githubusercontent.com/u/placeholder_id?v=4" width="100px;" alt="Nome do Colaborador"/>
+        <br />
+        <sub><b>Nome do Colaborador</b></sub>
+      </a>
+    </td>
+  </tr>
 </table>
