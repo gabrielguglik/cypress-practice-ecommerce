@@ -1,27 +1,12 @@
 import { faker } from '@faker-js/faker';
 import { API_URLs } from '../../support/api_urls.js';
+import { generateUser } from '../../support/generate_user.js';
 
 describe('Create Account Endpoint' , () => {
     const url = API_URLs.UPDATE_ACCOUNT;
 
     it('Atualizar Conta de Usuário Com Sucesso', () => {
-        const user_infos = {
-            name: faker.person.fullName(),
-            email: faker.internet.email(),
-            password: faker.internet.password(),
-            birth_day: faker.number.int({ min: 1, max: 30 }),
-            birth_month: faker.date.month(),
-            birth_year: faker.number.int({ min: 1950, max: 2005 }),
-            first_name: faker.person.firstName(),
-            last_name: faker.person.lastName(),
-            company: faker.company.name(),
-            address: faker.location.streetAddress(),
-            country: faker.location.country(),
-            zipcode: faker.location.zipCode(),
-            state: faker.location.state(),
-            city: faker.location.city(),
-            mobile_number: faker.phone.number()
-        };
+        const user_infos = generateUser();
         cy.gui_fazer_cadastro_completo(user_infos);
         const updated_user_infos = {
             name: faker.person.fullName(),

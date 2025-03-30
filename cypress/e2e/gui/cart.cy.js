@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { generateUser } from '../../support/generate_user.js';
 import { GUI_URLs } from '../../support/gui_urls.js';
 import Cart from "../../support/pages/cart";
 
@@ -28,23 +29,8 @@ describe('Cart', () => {
     });
 
     it('Finalizar Compra com Sucesso', () => {
-        const user_infos = {
-            name: faker.person.fullName(),
-            email: faker.internet.email(),
-            password: faker.internet.password(),
-            birth_day: faker.number.int({ min: 1, max: 30 }),
-            birth_month: faker.date.month(),
-            birth_year: faker.number.int({ min: 1950, max: 2005 }),
-            first_name: faker.person.firstName(),
-            last_name: faker.person.lastName(),
-            company: faker.company.name(),
-            address: faker.location.streetAddress(),
-            country: faker.location.country(),
-            zipcode: faker.location.zipCode(),
-            state: faker.location.state(),
-            city: faker.location.city(),
-            mobile_number: faker.phone.number()
-        };
+        const user_infos = generateUser();
+        
         cy.gui_fazer_cadastro_completo(user_infos);
         cy.gui_adicionar_produto_e_visualizar_carrinho();
         const payment_infos = {
@@ -61,23 +47,8 @@ describe('Cart', () => {
     });
 
     it('Redirecionar Para a Seção Home Após Finalizar Compra com Sucesso', () => {
-        const user_infos = {
-            name: faker.person.fullName(),
-            email: faker.internet.email(),
-            password: faker.internet.password(),
-            birth_day: faker.number.int({ min: 1, max: 30 }),
-            birth_month: faker.date.month(),
-            birth_year: faker.number.int({ min: 1950, max: 2005 }),
-            first_name: faker.person.firstName(),
-            last_name: faker.person.lastName(),
-            company: faker.company.name(),
-            address: faker.location.streetAddress(),
-            country: faker.location.country(),
-            zipcode: faker.location.zipCode(),
-            state: faker.location.state(),
-            city: faker.location.city(),
-            mobile_number: faker.phone.number()
-        };
+        const user_infos = generateUser();
+
         cy.gui_fazer_cadastro_completo(user_infos);
         cy.gui_adicionar_produto_e_visualizar_carrinho();
         const payment_infos = {
@@ -95,23 +66,8 @@ describe('Cart', () => {
     });
 
     it('Baixar o Recibo Após Finalizar Compra com Sucesso', () => {
-        const user_infos = {
-            name: faker.person.fullName(),
-            email: faker.internet.email(),
-            password: faker.internet.password(),
-            birth_day: faker.number.int({ min: 1, max: 30 }),
-            birth_month: faker.date.month(),
-            birth_year: faker.number.int({ min: 1950, max: 2005 }),
-            first_name: faker.person.firstName(),
-            last_name: faker.person.lastName(),
-            company: faker.company.name(),
-            address: faker.location.streetAddress(),
-            country: faker.location.country(),
-            zipcode: faker.location.zipCode(),
-            state: faker.location.state(),
-            city: faker.location.city(),
-            mobile_number: faker.phone.number()
-        };
+        const user_infos = generateUser();
+
         cy.gui_fazer_cadastro_completo(user_infos);
         cy.gui_adicionar_produto_e_visualizar_carrinho();
         const payment_infos = {

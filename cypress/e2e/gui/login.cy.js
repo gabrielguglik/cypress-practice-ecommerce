@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { generateUser } from '../../support/generate_user.js';
 import { GUI_URLs } from '../../support/gui_urls.js';
 import Home from '../../support/pages/home';
 import Login from '../../support/pages/login';
@@ -7,23 +8,7 @@ describe('Login', () => {
     let user_infos;
 
     beforeEach(() => {
-        user_infos = {
-            name: faker.person.fullName(),
-            email: faker.internet.email(),
-            password: faker.internet.password(),
-            birth_day: faker.number.int({ min: 1, max: 30 }),
-            birth_month: faker.date.month(),
-            birth_year: faker.number.int({ min: 1950, max: 2005 }),
-            first_name: faker.person.firstName(),
-            last_name: faker.person.lastName(),
-            company: faker.company.name(),
-            address: faker.location.streetAddress(),
-            country: faker.location.country(),
-            zipcode: faker.location.zipCode(),
-            state: faker.location.state(),
-            city: faker.location.city(),
-            mobile_number: faker.phone.number()
-        };
+        user_infos = generateUser();
 
         // para este cenário, o ideal seria utilizar o comando de API cy.api_cadastrar_usuario(user_infos) para realizar as pré-condições do teste,
         // garantindo maior velocidade e eliminando visitas desncessárias às páginas. no entanto, devido a limitações da aplicação,
