@@ -1,5 +1,7 @@
+import { API_URLs } from '../../support/api_urls.js';
+
 describe('Search Product Endpoint' , () => {
-    const url = 'https://automationexercise.com/api/searchProduct';
+    const url = API_URLs.SEARCH_PRODUCT;
 
     it('Pesquisar Produto Com Sucesso', () => {
         cy.request({

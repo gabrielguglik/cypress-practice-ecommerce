@@ -1,7 +1,8 @@
 import { faker } from '@faker-js/faker';
+import { API_URLs } from '../../support/api_urls.js';
 
 describe('Create Account Endpoint' , () => {
-    const url = 'https://automationexercise.com/api/deleteAccount';
+    const url = API_URLs.DELETE_ACCOUNT;
 
     it('Deletar Conta de Usuário Com Sucesso', () => {
         const user_infos = {

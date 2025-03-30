@@ -1,5 +1,7 @@
+import { API_URLs } from '../../support/api_urls.js';
+
 describe('Products List Endpoint' , () => {
-    const url = 'https://automationexercise.com/api/productsList';
+    const url = API_URLs.PRODUCTS_LIST;
 
     it('Obter Lista de Todos os Produtos Com Sucesso', () => {
         cy.request('GET', `${url}`).then((response) => {

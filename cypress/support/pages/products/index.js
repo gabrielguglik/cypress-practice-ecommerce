@@ -1,8 +1,10 @@
+import { GUI_URLs } from '../../gui_urls.js';
+
 const elements = require('./elements').ELEMENTS;
 
 class Products {
     acessarProducts() {
-        cy.visit('https://www.automationexercise.com/products');
+        cy.visit(GUI_URLs.PRODUCTS);
     };
 
     preencherBusca(busca) {

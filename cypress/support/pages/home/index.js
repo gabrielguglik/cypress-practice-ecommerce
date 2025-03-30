@@ -1,8 +1,10 @@
+import { GUI_URLs } from '../../gui_urls.js';
+
 const elements = require('./elements').ELEMENTS;
 
 class Home {
     acessarHome() {
-        cy.visit('https://www.automationexercise.com/');
+        cy.visit(GUI_URLs.HOME);
     };
 
     localizarProduto() {

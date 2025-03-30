@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { GUI_URLs } from '../../support/gui_urls.js';
 import CadastroCompleto from '../../support/pages/cadastroCompleto';
 
 describe('Cadastro Completo', () => {
@@ -39,14 +40,14 @@ describe('Cadastro Completo', () => {
         CadastroCompleto.preencherNumeroCelular(user_infos.mobile_number);
         CadastroCompleto.enviarCadastroCompleto();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/account_created');
+        cy.url().should('equal', GUI_URLs.ACCOUNT_CREATED);
         cy.contains('Account Created!').should('be.visible');
     });
 
     it('Cadastro Completo de Novo Usuário Sem os Campos Obrigatórios', () => {
         CadastroCompleto.enviarCadastroCompleto();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/signup');
+        cy.url().should('equal', GUI_URLs.SIGNUP);
     });
 
 });

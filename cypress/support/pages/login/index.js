@@ -1,8 +1,10 @@
+import { GUI_URLs } from '../../gui_urls.js';
+
 const elements = require('./elements').ELEMENTS;
 
 class Login {
     acessarLogin() {
-        cy.visit('https://www.automationexercise.com/login');
+        cy.visit(GUI_URLs.LOGIN);
     };
 
     preencherEmail(email) {

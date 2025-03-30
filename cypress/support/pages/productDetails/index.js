@@ -1,8 +1,10 @@
+import { GUI_URLs } from '../../gui_urls.js';
+
 const elements = require('./elements').ELEMENTS;
 
 class ProductDetails {
     acessarVisualizacaoProduto() {
-        cy.visit('https://www.automationexercise.com/product_details/1');
+        cy.visit(GUI_URLs.PRODUCT_DETAILS + '/1');
     };
 
     preencherNome(name) {

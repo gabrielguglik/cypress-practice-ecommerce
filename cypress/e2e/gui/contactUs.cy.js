@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { GUI_URLs } from '../../support/gui_urls.js';
 import ContactUs from '../../support/pages/contactUs';
 
 describe('Contact Us', () => {
@@ -46,7 +47,7 @@ describe('Contact Us', () => {
         cy.gui_enviar_mensagem(message_infos);
         ContactUs.clicarBotaoHome();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/');
+        cy.url().should('equal', GUI_URLs.HOME);
     });
 
 });

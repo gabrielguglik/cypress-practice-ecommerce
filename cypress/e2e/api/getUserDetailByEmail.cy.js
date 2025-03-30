@@ -1,7 +1,8 @@
 import { faker } from '@faker-js/faker';
+import { API_URLs } from '../../support/api_urls.js';
 
 describe('Get User Detail By Email Endpoint' , () => {
-    const url = 'https://automationexercise.com/api/getUserDetailByEmail';
+    const url = API_URLs.GET_USER_DETAIL_BY_EMAIL;
 
     it('Obter Detalhes da Conta do Usuário por Email Com Sucesso', () => {
         const user_infos = {

@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { GUI_URLs } from '../../support/gui_urls.js';
 import CadastroInicial from "../../support/pages/cadastroInicial";
 
 describe('Cadastro Inicial', () => {
@@ -11,7 +12,7 @@ describe('Cadastro Inicial', () => {
         CadastroInicial.preencherEmail(user_email);
         CadastroInicial.enviarCadastroInicial();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/signup');
+        cy.url().should('equal', GUI_URLs.SIGNUP);
     });
 
     it('Cadastro Inicial de Novo Usuário Sem o Campo Nome', () => {
@@ -21,7 +22,7 @@ describe('Cadastro Inicial', () => {
         CadastroInicial.preencherEmail(user_email);
         CadastroInicial.enviarCadastroInicial();
 
-       cy.url().should('equal', 'https://www.automationexercise.com/login');
+       cy.url().should('equal', GUI_URLs.LOGIN);
     });
 
     it('Cadastro Inicial de Novo Usuário Sem o Campo Email', () => {
@@ -31,7 +32,7 @@ describe('Cadastro Inicial', () => {
         CadastroInicial.preencherNome(user_name);
         CadastroInicial.enviarCadastroInicial();
 
-       cy.url().should('equal', 'https://www.automationexercise.com/login');
+       cy.url().should('equal', GUI_URLs.LOGIN);
     });
 
     it('Cadastro Inicial de Novo Usuário Com o Campo Email Já Cadastrado', () => {
@@ -63,7 +64,7 @@ describe('Cadastro Inicial', () => {
         CadastroInicial.preencherEmail(user_infos.email);
         CadastroInicial.enviarCadastroInicial();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/signup');
+        cy.url().should('equal', GUI_URLs.SIGNUP);
         cy.contains('Email Address already exist!').should('be.visible');
     });
 

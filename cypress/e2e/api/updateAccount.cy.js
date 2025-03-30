@@ -1,7 +1,8 @@
 import { faker } from '@faker-js/faker';
+import { API_URLs } from '../../support/api_urls.js';
 
 describe('Create Account Endpoint' , () => {
-    const url = 'https://automationexercise.com/api/updateAccount';
+    const url = API_URLs.UPDATE_ACCOUNT;
 
     it('Atualizar Conta de Usuário Com Sucesso', () => {
         const user_infos = {

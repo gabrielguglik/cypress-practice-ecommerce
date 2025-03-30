@@ -1,7 +1,8 @@
 import { faker } from '@faker-js/faker';
+import { API_URLs } from '../../support/api_urls.js';
 
 describe('Verify Login Endpoint' , () => {
-    const url = 'https://automationexercise.com/api/verifyLogin';
+    const url = API_URLs.VERIFY_LOGIN;
 
     it('Fazer Login Com Credenciais Válidas Com Sucesso', () => {
         // para este cenário, o ideal seria utilizar o comando de API cy.api_cadastrar_usuario(user_infos) para realizar as pré-condições do teste,

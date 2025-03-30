@@ -1,5 +1,7 @@
+import { API_URLs } from '../../support/api_urls.js';
+
 describe('Brands List Endpoint' , () => {
-    const url = 'https://automationexercise.com/api/brandsList';
+    const url = API_URLs.BRANDS_LIST;
 
     it('Obter Lista de Todas as Marcas Com Sucesso', () => {
         cy.request('GET', `${url}`).then((response) => {

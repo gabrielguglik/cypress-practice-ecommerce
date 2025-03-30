@@ -1,10 +1,11 @@
 import 'cypress-file-upload';
+import { GUI_URLs } from '../../gui_urls';
 
 const elements = require('./elements').ELEMENTS;
 
 class ContactUs {
     acessarContactUs() {
-        cy.visit('https://www.automationexercise.com/contact_us');
+        cy.visit(GUI_URLs.CONTACT_US);
     };
 
     preencherNome(name) {

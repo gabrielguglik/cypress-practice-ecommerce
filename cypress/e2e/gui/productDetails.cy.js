@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { GUI_URLs } from '../../support/gui_urls.js';
 import ProductDetails from "../../support/pages/productDetails";
 
 describe('Product Details', () => {
@@ -70,14 +71,14 @@ describe('Product Details', () => {
         cy.gui_visualizacao_adicionar_produto_ao_carrinho();
         ProductDetails.clicarBotaoContinueShopping();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/product_details/1');
+        cy.url().should('equal', GUI_URLs.PRODUCT_DETAILS + '/1');
     });
 
     it('Redirecionar para Seção Cart Após Adicionar um Produto ao Carrinho a Partir da Visualização com Sucesso', () => {
         cy.gui_visualizacao_adicionar_produto_ao_carrinho();
         ProductDetails.clicarBotaoViewCart();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/view_cart');
+        cy.url().should('equal', GUI_URLs.VIEW_CART);
     });
 
     it.only('Adicionar Certa Quantidade de um Produto ao Carrinho a Partir da Visualização com Sucesso', () => {
@@ -87,7 +88,7 @@ describe('Product Details', () => {
         ProductDetails.clicarBotaoAddToCart();
         ProductDetails.clicarBotaoViewCart();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/view_cart');
+        cy.url().should('equal', GUI_URLs.VIEW_CART);
         ProductDetails.verificarQuantidadeProduto().contains(2);
     });
 

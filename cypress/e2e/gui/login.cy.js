@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { GUI_URLs } from '../../support/gui_urls.js';
 import Home from '../../support/pages/home';
 import Login from '../../support/pages/login';
 
@@ -37,7 +38,7 @@ describe('Login', () => {
         Login.preencherSenha(user_infos.password);
         Login.clicarBotaoLogin();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/');
+        cy.url().should('equal', GUI_URLs.HOME);
         cy.contains('Logged in as ' + user_infos.name).should('be.visible');
     });
 
@@ -49,7 +50,7 @@ describe('Login', () => {
         Login.preencherSenha(user_infos.password);
         Login.clicarBotaoLogin();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/login');
+        cy.url().should('equal', GUI_URLs.LOGIN);
         cy.contains('Your email or password is incorrect!').should('be.visible');
     });
 
@@ -61,7 +62,7 @@ describe('Login', () => {
         Login.preencherSenha(wrongPassword);
         Login.clicarBotaoLogin();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/login');
+        cy.url().should('equal', GUI_URLs.LOGIN);
         cy.contains('Your email or password is incorrect!').should('be.visible');
     });
 
@@ -70,7 +71,7 @@ describe('Login', () => {
         Login.preencherSenha(user_infos.password);
         Login.clicarBotaoLogin();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/login');
+        cy.url().should('equal', GUI_URLs.LOGIN);
     });
 
     it('Login de Usuário Existente Sem o Campo Senha', () => {
@@ -78,7 +79,7 @@ describe('Login', () => {
         Login.preencherEmail(user_infos.email);
         Login.clicarBotaoLogin();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/login');
+        cy.url().should('equal', GUI_URLs.LOGIN);
     });
 
 });

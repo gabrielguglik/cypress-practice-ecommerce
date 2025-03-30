@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { GUI_URLs } from '../../support/gui_urls.js';
 import Home from '../../support/pages/home';
 
 describe('Home', () => {
@@ -14,7 +15,7 @@ describe('Home', () => {
         Home.acessarHome();
         Home.clicarBotaoViewProduct();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/product_details/1');
+        cy.url().should('equal', GUI_URLs.PRODUCT_DETAILS + '/1');
     });
 
     it('Filtrar Por Categoria com Sucesso', () => {
@@ -22,14 +23,14 @@ describe('Home', () => {
         Home.clicarBotaoCategoria();
         Home.clicarBotaoSubcategoria();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/category_products/1');
+        cy.url().should('equal', GUI_URLs.CATEGORY_PRODUCTS + '/1');
     });
 
     it('Filtrar Por Marca com Sucesso', () => {
         Home.acessarHome();
         Home.clicarBotaoMarca();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/brand_products/Polo');
+        cy.url().should('equal',GUI_URLs.BRAND_PRODUCTS + '/Polo');
         cy.contains('Brand - Polo Products').should('be.visible');
     });
 
@@ -58,14 +59,14 @@ describe('Home', () => {
         cy.gui_adicionar_produto_ao_carrinho();
         Home.clicarBotaoContinueShopping();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/');
+        cy.url().should('equal', GUI_URLs.HOME);
     });
 
     it('Redirecionar para Seção Cart Após Adicionar um Produto ao Carrinho com Sucesso', () => {
         cy.gui_adicionar_produto_ao_carrinho();
         Home.clicarBotaoViewCart();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/view_cart');
+        cy.url().should('equal', GUI_URLs.VIEW_CART);
     });
 
     it('Inscrever Email com Sucesso', () => {
@@ -107,7 +108,7 @@ describe('Home', () => {
         cy.gui_fazer_cadastro_completo(user_infos);
         Home.clicarBotaoLogout();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/login');
+        cy.url().should('equal', GUI_URLs.LOGIN);
     });
 
     it.only('Deletar Conta com Sucesso', () => {
@@ -132,7 +133,7 @@ describe('Home', () => {
         cy.gui_fazer_cadastro_completo(user_infos);
         Home.clicarBotaoDeleteAccount();
 
-        cy.url().should('equal', 'https://www.automationexercise.com/delete_account');
+        cy.url().should('equal', GUI_URLs.DELETE_ACCOUNT);
         cy.contains('Account Deleted!').should('be.visible');
     });
 

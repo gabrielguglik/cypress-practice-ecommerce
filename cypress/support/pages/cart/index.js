@@ -1,8 +1,10 @@
+import { GUI_URLs } from '../../gui_urls.js';
+
 const elements = require('./elements').ELEMENTS;
 
 class Cart {
     acessarCarrinho() {
-        cy.visit('https://www.automationexercise.com/view_cart');
+        cy.visit(GUI_URLs.VIEW_CART);
     };
 
     visualizarProduto() {
