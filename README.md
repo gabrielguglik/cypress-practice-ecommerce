@@ -92,9 +92,9 @@ Contribuições são bem-vindas! Para contribuir com este projeto, siga estas et
     </td>
     <td align="center">
       <a href="https://github.com/colaborador-placeholder">
-        <img src="https://avatars.githubusercontent.com/u/placeholder_id?v=4" width="100px;" alt="Nome do Colaborador"/>
+        <img src="https://avatars.githubusercontent.com/u/26276025?v=4" width="100px;" alt="Mirian de França Santos Pereira"/>
         <br />
-        <sub><b>Nome do Colaborador</b></sub>
+        <sub><b>Mirian de França Santos Pereira</b></sub>
       </a>
     </td>
   </tr>
